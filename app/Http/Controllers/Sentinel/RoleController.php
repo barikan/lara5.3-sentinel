@@ -154,6 +154,11 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = Sentinel::findRoleById($id);
+        if ($role == null) {
+            return Redirect::back()->withInput()->withErrors(['invalid_role' => trans('sentinel.invalid_role')]);
+        }
+
+
     }
 }

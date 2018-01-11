@@ -8,7 +8,8 @@
         "php": ">=7.0.0",
         "laravel/framework": "5.5.*",
         "cartalyst/sentinel": "^2.0",
-        "barryvdh/laravel-ide-helper": "^2.4"
+        "barryvdh/laravel-ide-helper": "^2.4",
+        "rap2hpoutre/laravel-log-viewer": "^0.11.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

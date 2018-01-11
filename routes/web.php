@@ -51,3 +51,5 @@ Route::get('/home', 'HomeController@index');
 Route::resource('roles', 'Sentinel\RoleController');
 Route::post('permissions', 'Sentinel\PermissionController@store');
 Route::delete('permissions/{name}', 'Sentinel\PermissionController@destroy');
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
