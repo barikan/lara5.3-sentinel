@@ -7,7 +7,8 @@
     "require": {
         "php": ">=7.0.0",
         "laravel/framework": "5.5.*",
-        "cartalyst/sentinel": "^2.0"
+        "cartalyst/sentinel": "^2.0",
+        "barryvdh/laravel-ide-helper": "^2.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
