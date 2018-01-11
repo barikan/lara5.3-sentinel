@@ -47,3 +47,7 @@ Route::resource('users', 'Sentinel\UserController', ['except' => [
 Route::get('setting', 'Sentinel\SettingController@show');
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('roles', 'Sentinel\RoleController');
+Route::post('permissions', 'Sentinel\PermissionController@store');
+Route::delete('permissions/{name}', 'Sentinel\PermissionController@destroy');
