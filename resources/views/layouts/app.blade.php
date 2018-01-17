@@ -43,19 +43,29 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            @if (Sentinel::check())
+                                @if (Sentinel::inRole('admin'))
+                                    <li><a href="{{ url('users')}}">ユーザー管理</a></li>
+                                    <li><a href="{{ url('roles')}}">ロール管理</a></li>
+                                @elseif (Sentinel::inRole('moderator'))
+                                    <li><a href="{{ url('users')}}">ユーザー管理</a></li>
+                                @endif
+                            @endif
+                        </ul>&nbsp;
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
+                        @if (Sentinel::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Sentinel::getUser()->name}} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

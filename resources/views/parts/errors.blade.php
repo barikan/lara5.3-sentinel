@@ -1,5 +1,4 @@
-<!-- resources/views/parts/errors.blade.php -->
-
+<!-- resources/views/common/errors.blade.php -->
 <!-- Form Error List -->
 <div id="error-block" class="alert alert-danger" @if (count($errors) == 0) style="display: none;" @endif >
     <strong>以下のエラーが発生しました。</strong>
@@ -10,3 +9,4 @@
         @endforeach
     </ul>
 </div>
+

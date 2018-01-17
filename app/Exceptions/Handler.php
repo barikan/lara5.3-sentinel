@@ -44,6 +44,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        /*
+        if ($exceotion instanceof MethodNotAllowedHttpException) {
+            //ここに処理を書く
+        }
+        */
         return parent::render($request, $exception);
     }
 

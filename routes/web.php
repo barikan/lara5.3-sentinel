@@ -39,5 +39,10 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
 
+Route::resource('users', 'Sentinel\UserController');
+
+Route::resource('roles', 'Sentinel\RoleController');
+Route::post('permissions', 'Sentinel\PermissionController@store');
+Route::delete('permissions/{name}', 'Sentinel\PermissionController@destroy');
 
 Route::get('/home', 'HomeController@index');
