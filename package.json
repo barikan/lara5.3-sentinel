@@ -3,7 +3,7 @@
   "scripts": {
     "prod": "gulp --production",
     "dev": "gulp watch",
-    "test": "composer exec codecept run"
+    "test": "composer exec codecept -v run"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",

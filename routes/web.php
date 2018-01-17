@@ -33,9 +33,11 @@ Route::get('register/{email}', 'Auth\RegisterController@resendActivationCode');
 Route::get('activate/{email}/{code}', 'Sentinel\ActivateController@activate');
 
 // パスワードのリセット用のルート
+Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm'); //->name('password.email');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset.token');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+
 
 Route::get('/home', 'HomeController@index');
